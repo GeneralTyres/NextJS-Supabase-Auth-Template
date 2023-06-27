@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html style={{'height': '100dvh'}} lang="en">
       <body className={inter.className}>{children}</body>
     </html>
   )

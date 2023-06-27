@@ -69,33 +69,41 @@ export default function AccountForm({ session }: { session: Session | null }) {
     }
 
     return (
-        <div className="form-widget">
-            <div>
-                <label htmlFor="email">Email</label>
-                <input id="email" type="text" value={session?.user.email} disabled />
+        <div className="form-widget p-4 rounded-md w-1/2 mx-auto">
+            <div className="mb-4">
+                <label htmlFor="email" className="text-sm font-medium text-gray-700">Email</label>
+                <input
+                    id="email"
+                    type="text"
+                    value={session?.user.email}
+                    disabled
+                    className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-black"
+                />
             </div>
-            <div>
-                <label htmlFor="fullName">Full Name</label>
+            <div className="mb-4">
+                <label htmlFor="fullName" className="text-sm font-medium text-gray-700">Full Name</label>
                 <input
                     id="fullName"
                     type="text"
                     value={fullname || ''}
                     onChange={(e) => setFullname(e.target.value)}
+                    className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-black"
                 />
             </div>
-            <div>
-                <label htmlFor="username">Username</label>
+            <div className="mb-4">
+                <label htmlFor="username" className="text-sm font-medium text-gray-700">Username</label>
                 <input
                     id="username"
                     type="text"
                     value={username || ''}
                     onChange={(e) => setUsername(e.target.value)}
+                    className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-black"
                 />
             </div>
 
-            <div>
+            <div className="mb-4">
                 <button
-                    className="button primary block"
+                    className="w-full px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600"
                     onClick={() => updateProfile({ fullname, username, avatar_url })}
                     disabled={loading}
                 >
@@ -105,11 +113,15 @@ export default function AccountForm({ session }: { session: Session | null }) {
 
             <div>
                 <form action="/auth/signout" method="post">
-                    <button className="button block" type="submit">
+                    <button
+                        className="w-full px-4 py-2 text-gray-700 bg-gray-300 rounded-md hover:bg-gray-400"
+                        type="submit"
+                    >
                         Sign out
                     </button>
                 </form>
             </div>
         </div>
-    )
+    );
+
 }
