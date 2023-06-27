@@ -13,7 +13,7 @@ export default function Page() {
                 </div>
             </div>
             <div className="flex flex-col justify-center">
-                <div className="mx-auto">
+                <div className="mx-auto w-1/2">
                     <AuthForm />
                 </div>
             </div>
